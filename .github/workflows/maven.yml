@@ -3,11 +3,7 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ MovieLine ]
-  pull_request:
-    branches: [ MovieLine ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -20,5 +16,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+        distribution: adopt
     - name: Build with Maven
       run: mvn -B -e verify
